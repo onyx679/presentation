@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NEXBOT Viewer</title>
+    <link rel="stylesheet" href="/assets/static/index.Blg-5DjL.css">
+    <style>
+        :root {
+            color-scheme: light;
+        }
+
+        html,
+        body,
+        #root {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            background: #f5f1ea !important;
+        }
+
+        body {
+            position: relative;
+        }
+
+        canvas {
+            background: #f5f1ea !important;
+        }
+
+        button,
+        [role="dialog"],
+        [aria-modal="true"],
+        [role="toolbar"],
+        .view-cube {
+            display: none !important;
+        }
+
+        #loading-gate {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle at center, rgba(255, 255, 255, 0.55), rgba(245, 241, 234, 0.96) 70%),
+                #f5f1ea;
+            transition: opacity 0.7s ease, visibility 0.7s ease;
+        }
+
+        body.scene-ready #loading-gate {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loading-chip {
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(24, 34, 49, 0.08);
+            background: rgba(255, 255, 255, 0.82);
+            color: rgba(24, 34, 49, 0.72);
+            font: 600 14px/1 "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="theme-dark">
+    <div id="root"></div>
+    <div id="loading-gate" aria-hidden="true">
+        <div class="loading-chip">Loading Scene</div>
+    </div>
+
+    <script id="vike_pageContext" type="application/json">{"abortReason":"!undefined","_urlRewrite":null,"_urlRedirect":"!undefined","abortStatusCode":"!undefined","_abortCall":"!undefined","_pageContextInitIsPassedToClient":"!undefined","_pageId":"/pages/index","routeParams":{"*":"/file/52b919b8-1634-4e9f-aa3c-c63d26113129"},"data":"!undefined"}</script>
+    <script>
+        (() => {
+            const COVER_BG = '#f5f1ea';
+            let patched = false;
+            let revealScheduled = false;
+            let fallbackRevealScheduled = false;
+
+            function getRuntime() {
+                const canvas = document.querySelector('canvas');
+                if (!canvas) return null;
+
+                const fiberKey = Object.keys(canvas).find((key) => key.startsWith('__reactFiber'));
+                if (!fiberKey) return null;
+
+                let fiber = canvas[fiberKey];
+                while (fiber) {
+                    const typeName = fiber.type?.name || fiber.elementType?.name;
+                    const runtime = fiber.memoizedState?.next?.memoizedState;
+                    if (typeName === 'kN' && runtime?.scene) {
+                        return runtime;
+                    }
+                    fiber = fiber.return;
+                }
+
+                return null;
+            }
+
+            function syncBackground() {
+                document.documentElement.style.background = COVER_BG;
+                document.body.style.background = COVER_BG;
+                const root = document.getElementById('root');
+                if (root) root.style.background = COVER_BG;
+            }
+
+            function revealScene() {
+                if (revealScheduled) return;
+                revealScheduled = true;
+                window.setTimeout(() => {
+                    document.body.classList.add('scene-ready');
+                }, 1100);
+            }
+
+            function scheduleFallbackReveal() {
+                if (fallbackRevealScheduled) return;
+                fallbackRevealScheduled = true;
+                window.setTimeout(() => {
+                    document.body.classList.add('scene-ready');
+                }, 5200);
+            }
+
+            function hideViewerUi() {
+                document.querySelectorAll('button').forEach((button) => {
+                    button.style.display = 'none';
+                    button.setAttribute('aria-hidden', 'true');
+                });
+
+                document.querySelectorAll('[role="dialog"], [aria-modal="true"]').forEach((node) => {
+                    node.style.display = 'none';
+                    node.setAttribute('aria-hidden', 'true');
+                });
+
+                document.querySelectorAll('[role="toolbar"], .view-cube').forEach((node) => {
+                    node.style.display = 'none';
+                    node.setAttribute('aria-hidden', 'true');
+                });
+
+                document.querySelectorAll('div, span, p').forEach((node) => {
+                    if ((node.textContent || '').trim() === 'Press on the canvas to focus and interact') {
+                        node.style.display = 'none';
+                    }
+                });
+            }
+
+            function patchScene() {
+                syncBackground();
+                hideViewerUi();
+
+                const runtime = getRuntime();
+                if (!runtime) return false;
+
+                runtime.setBackgroundColor?.(COVER_BG);
+
+                const logo = runtime.scene.getObjectByName?.('logo');
+                if (logo) {
+                    logo.visible = false;
+                }
+
+                runtime.requestRender?.();
+                revealScene();
+                patched = true;
+                return true;
+            }
+
+            function keepPatching() {
+                const canvas = document.querySelector('canvas');
+                if (canvas) {
+                    revealScene();
+                }
+                if (!patchScene()) {
+                    requestAnimationFrame(keepPatching);
+                }
+            }
+
+            window.addEventListener('load', () => {
+                scheduleFallbackReveal();
+                keepPatching();
+                setInterval(() => {
+                    if (!patched) {
+                        patchScene();
+                    } else {
+                        hideViewerUi();
+                    }
+                }, 1200);
+            });
+
+            new MutationObserver(() => {
+                patchScene();
+            }).observe(document.documentElement, {
+                childList: true,
+                subtree: true
+            });
+        })();
+    </script>
+    <script src="/assets/entries/entry-server-routing.DDmEeP9-.js" type="module" async></script>
+    <link rel="modulepreload" href="/assets/entries/pages_index.BLvFYXm0.js" as="script" type="text/javascript">
+</body>
+</html>
