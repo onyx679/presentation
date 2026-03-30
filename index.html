@@ -1267,7 +1267,7 @@
             border: 0;
             display: block;
             background: #070a10;
-            pointer-events: auto;
+            pointer-events: none;
         }
 
         .cover-visual-wash { display: none; }
@@ -2455,7 +2455,8 @@
             var vizLeft = t * 56;   // %
             coverVisual.style.cssText =
                 "position:absolute;top:0;bottom:0;z-index:1;" +
-                "left:" + vizLeft + "%;width:" + (100 - vizLeft) + "%;";
+                "left:" + vizLeft + "%;width:" + (100 - vizLeft) + "%;" +
+                "pointer-events:" + (t > 0.8 ? "auto" : "none") + ";";
 
             // 点击提示
             if (coverHint) {
@@ -2539,8 +2540,8 @@
 
         // 点击事件（不拦截iframe上的点击）
         coverLayout.addEventListener("click", function (e) {
-            if (revealed) return;
-            if (e.target.closest && e.target.closest("iframe")) return;
+            if (revealed || Reveal.getIndices().h !== 0) return;
+            // 动画未展开时，拦截并处理触发展开
             e.stopPropagation();
             e.preventDefault();
             triggerReveal();
