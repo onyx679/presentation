@@ -1668,6 +1668,29 @@
             }
         }
 
+        /* ---- 图片占位 ---- */
+        .image-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            border: 2px dashed var(--line);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.38);
+            color: var(--text-muted);
+            font-size: 0.72em;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin: 18px 0;
+        }
+
+        .image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
     </style>
 </head>
 
@@ -1680,9 +1703,9 @@
             <div class="slide-shell cover-slide">
                 <div class="content-wrap cover-layout" id="coverLayout">
                     <div class="cover-copy">
-                        <div class="cover-badge" style="color: var(--accent);">习近平新时代中国特色社会主义思想概论</div>
-                        <h1 class="cover-title" style="color: var(--text);">机器人产业发展的两种路径<br>中国追赶与西方先发</h1>
-                        <p class="cover-sub" style="color: var(--text-body);">从1982年中国第一台工业机器人到2025年人形机器人出货量占全球80-90%，中国用四十年走完了西方半个世纪的路。这场追赶背后，是两种截然不同的制度逻辑。</p>
+                        <div class="cover-badge" style="color: var(--accent);">《习近平新时代中国特色社会主义思想概论》半期实践汇报</div>
+                        <h1 class="cover-title" style="color: var(--text);">从跟随到领跑<br>中西机器人产业演进<br>与制度动因分析</h1>
+                        <p class="cover-sub" style="color: var(--text-body);">从1982年中国起步，到2024年稳居全球第一大市场。四十年追赶背后，是两种截然不同的制度逻辑。</p>
                         <div class="cover-info" style="color: var(--text-muted); border-top-color: var(--line);">
                             <div>演讲人：张文豪</div>
                             <div>小组成员：XXX（占位符）</div>
@@ -1704,23 +1727,22 @@
             </div>
         </section>
 
-        <!-- ==================== 第2页：引入（大数字版） ==================== -->
+        <!-- ==================== 第2页：背景引入 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap narrow">
-                    <div class="eyebrow">Introduction</div>
-                    <h2 class="slide-title">机器人，真的要来了</h2>
-                    <p class="slide-lead">你可能觉得机器人蠢蠢笨笨的，但在资本市场上，这是万亿级赛道，没有人敢缺席。</p>
+                    <div class="eyebrow">背景引入</div>
+                    <h2 class="slide-title">前沿赛道：机器人与新质生产力</h2>
+                    <p class="slide-lead">机器人被誉为"制造业皇冠顶端的明珠"。它不再仅仅是技术话题，更是大国博弈的核心赛道和<strong>"新质生产力"</strong>的典型代表。</p>
 
-                    
                     <div class="topic-visual light visual-signal" aria-hidden="true">
                         <div class="signal-copy">
-                            <div class="visual-mini-title">Heat Map</div>
-                            <p>资本、产业和量产预期同时抬头，机器人不再只是技术话题，而是一个正在被放大定价的现实赛道。</p>
+                            <div class="visual-mini-title">产业热度</div>
+                            <p>资本、巨头与产业链同步加速，机器人正从实验室走向万亿级现实赛道。</p>
                             <div class="topic-label-row">
                                 <span class="topic-label accent">资本升温</span>
                                 <span class="topic-label steel">巨头下注</span>
-                                <span class="topic-label">量产临界</span>
+                                <span class="topic-label">中国速度</span>
                             </div>
                         </div>
                         <div class="signal-graphic">
@@ -1733,123 +1755,101 @@
                             <div class="pulse-ring"></div>
                         </div>
                     </div><div class="big-num-grid">
-                        <div class="big-num-card">
+                        <div class="big-num-card fragment fade-up">
                             <p class="big-num">286亿</p>
                             <p class="big-num-label">2024年国内融资额，同比翻倍</p>
                         </div>
-                        <div class="big-num-card">
-                            <p class="big-num">$395亿</p>
-                            <p class="big-num-label">Figure AI估值，成立不到3年</p>
+                        <div class="big-num-card fragment fade-up">
+                            <p class="big-num">$100亿+</p>
+                            <p class="big-num-label">Figure AI等海外企业估值破百亿美元</p>
                         </div>
-                        <div class="big-num-card">
+                        <div class="big-num-card fragment fade-up">
                             <p class="big-num">80-90%</p>
                             <p class="big-num-label">中国人形机器人出货占全球份额</p>
                         </div>
-                        <div class="big-num-card">
-                            <p class="big-num">40年</p>
-                            <p class="big-num-label">从零到全球第一的追赶速度</p>
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第3页：科普（宇树春晚视频页） ==================== -->
+        <!-- ==================== 第3页：破圈事件 ==================== -->
         <section>
-            <div class="slide-shell theme-paper">
-                <div class="content-wrap" style="text-align: center;">
-                    <div class="eyebrow" style="justify-content: center;">Overview</div>
-                    <h2 class="slide-title" style="text-align: center;">中国机器人，已经站上世界舞台</h2>
+            <div class=”slide-shell theme-paper”>
+                <div class=”content-wrap” style=”text-align: center;”>
+                    <div class=”eyebrow” style=”justify-content: center;”>破圈事件</div>
+                    <h2 class=”slide-title” style=”text-align: center;”>中国制造：从实验室走向世界舞台</h2>
 
-                    <div class="topic-visual light visual-stage" aria-hidden="true" style="margin-top: 28px; max-width: 900px; margin-left: auto; margin-right: auto; text-align: left;">
-                        <div class="stage-copy">
-                            <div class="visual-mini-title">Spring Festival Gala</div>
-                            <h3>机器人第一次以“表演者”身份进入全国大众视野</h3>
-                            <p>这不是一段单纯的节目视频，而是一次高密度的社会传播事件: 人形机器人从实验室走向舞台中央，技术能力第一次被普通观众直观感知。</p>
+                    <div class=”fragment fade-up” style=”max-width: 640px; margin: 18px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.18);”>
+                        <video autoplay muted loop playsinline style=”width: 100%; display: block;”>
+                            <source src=”https://oss-global-cdn.unitree.com/static/c2ecf2a5bfbd4835ab6ed442e88c6034.mp4” type=”video/mp4”>
+                        </video>
+                    </div>
+
+                    <div class=”topic-visual light visual-stage” aria-hidden=”true” style=”margin-top: 18px; max-width: 900px; margin-left: auto; margin-right: auto; text-align: left;”>
+                        <div class=”stage-copy”>
+                            <div class=”visual-mini-title”>2025春晚 · 宇树人形机器人集群表演</div>
+                            <h3>这不仅是一次社会传播事件，更是中国核心技术突破的具象化展示</h3>
                         </div>
-                        <div class="stage-grid">
-                            <div class="stage-card accent">
-                                <span>Perception</span>
-                                <strong>AI算法与动作控制同步上台</strong>
+                        <div class=”stage-grid”>
+                            <div class=”stage-card accent fragment fade-up”>
+                                <span>算法与控制</span>
+                                <strong>自研AI算法与动作控制同步登台</strong>
                             </div>
-                            <div class="stage-card steel">
-                                <span>Execution</span>
-                                <strong>自主执行器和整机稳定性被看见</strong>
+                            <div class=”stage-card steel fragment fade-up”>
+                                <span>核心零部件</span>
+                                <strong>国产自主执行器和整机稳定性被大众看见</strong>
                             </div>
-                            <div class="stage-card">
-                                <span>Coordination</span>
-                                <strong>多机协同让“集群智能”具象化</strong>
-                            </div>
-                            <div class="stage-card accent">
-                                <span>Impact</span>
-                                <strong>技术展示第一次变成全民话题</strong>
+                            <div class=”stage-card fragment fade-up”>
+                                <span>集群智能</span>
+                                <strong>多机协同展现复杂系统控制优势</strong>
                             </div>
                         </div>
                     </div>
-                    <p style="margin: 12px 0 0; font-size: 0.62em; color: var(--text-muted);">2025春晚 · 宇树人形机器人集群武术表演 —— 自研AI算法 + 自主执行器 + 集群协同控制</p>
+                    <p class=”fragment fade-in” style=”margin: 12px 0 0; font-size: 0.72em; color: var(--accent); font-weight: 700;”>技术展示第一次变成全民自豪的焦点。</p>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第4页：技术难点 ==================== -->
+        <!-- ==================== 第4页：技术壁垒 + 核心设问 ==================== -->
         <section>
             <div class="slide-shell theme-dark">
                 <div class="content-wrap">
-                    <div class="eyebrow">Tech Challenges</div>
-                    <h2 class="slide-title">最难的不是下棋，是拿鸡蛋</h2>
-                    <p class="slide-lead">莫拉维克悖论：人觉得最简单的事，对机器人最难。</p>
+                    <div class="eyebrow">技术壁垒</div>
+                    <h2 class="slide-title">攻坚克难："卡脖子"技术背后的鸿沟</h2>
+                    <p class="slide-lead">莫拉维克悖论：人类觉得最简单的事（如拿鸡蛋），对机器人最难。这背后考验的是一个国家的底层工业基础。</p>
 
-                    
                     <div class="topic-visual dark visual-challenge" aria-hidden="true">
-                        <div class="challenge-core">抓取与平衡</div>
-                        <div class="challenge-node top">运动</div>
-                        <div class="challenge-node left">触觉</div>
-                        <div class="challenge-node right">泛化</div>
-                        <div class="challenge-node bottom">数据</div>
+                        <div class="challenge-core">工业基础</div>
+                        <div class="challenge-node top fragment fade-up">硬件</div>
+                        <div class="challenge-node left fragment fade-up">软件</div>
+                        <div class="challenge-node right fragment fade-up">数据</div>
+                        <div class="challenge-node bottom fragment fade-up">协同</div>
                     </div><div class="framework-stack">
-                        <div class="framework-row">
-                            <div class="framework-label">运动本能</div>
-                            <div class="framework-desc">训练机器人走路的耗能是婴儿的180万倍</div>
-                            <div class="framework-clue">Moravec's Paradox</div>
+                        <div class="framework-row fragment fade-up">
+                            <div class="framework-label">硬件鸿沟</div>
+                            <div class="framework-desc">高精密RV减速器和谐波减速器等核心零部件长期被日本等西方国家垄断</div>
+                            <div class="framework-clue">Hardware Gap</div>
                         </div>
-                        <div class="framework-row">
-                            <div class="framework-label">感知触觉</div>
-                            <div class="framework-desc">拿鸡蛋不碎——马斯克的终极测试</div>
-                            <div class="framework-clue">Tactile Sensing</div>
-                        </div>
-                        <div class="framework-row">
-                            <div class="framework-label">泛化能力</div>
-                            <div class="framework-desc">教过的会做，没教过的就懵——这不叫智能</div>
-                            <div class="framework-clue">Generalization</div>
-                        </div>
-                        <div class="framework-row">
-                            <div class="framework-label">训练数据</div>
-                            <div class="framework-desc">不可能让机器人拿1000亿次鸡蛋</div>
-                            <div class="framework-clue">Data Scarcity</div>
+                        <div class="framework-row fragment fade-up">
+                            <div class="framework-label">软件鸿沟</div>
+                            <div class="framework-desc">感知触觉、泛化能力、庞大训练数据的积累——单靠几家企业极度困难</div>
+                            <div class="framework-clue">Software Gap</div>
                         </div>
                     </div>
+
+                    <p class="hero-question fragment fade-up" style="font-size: 1.2em; margin-top: 28px;">这么难的事，为什么中国能用40年实现历史性跨越？</p>
+                    <p class="hero-answer fragment fade-in" style="font-size: 0.82em;">答案不在某一家企业，而在背后的<strong>制度密码</strong>。</p>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第5页：核心提问（纯大字页） ==================== -->
-        <section>
-            <div class="slide-shell theme-paper">
-                <div class="content-wrap narrow" style="display: flex; flex-direction: column; justify-content: center; min-height: 70vh;">
-                    <p class="hero-question">这么难的事，<br>为什么中国40年就追上了？</p>
-                    <p class="hero-answer">答案不在某一家企业，而在制度。</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== 第6页：五维框架（精简版） ==================== -->
+        <!-- ==================== 第5页：对比框架（3维） ==================== -->
         <section>
             <div class="slide-shell theme-dark">
                 <div class="content-wrap">
-                    <div class="eyebrow">Framework</div>
-                    <h2 class="slide-title">五个维度看制度差异</h2>
+                    <div class="eyebrow">对比框架</div>
+                    <h2 class="slide-title">三个核心维度透视中西制度差异</h2>
 
-                    
                     <div class="topic-visual dark visual-band" aria-hidden="true">
                         <div class="band-stack">
                             <div class="compare-band">
@@ -1863,93 +1863,70 @@
                                 <div class="compare-track west"><i style="--w: 58%;"></i></div>
                             </div>
                             <div class="compare-band">
-                                <span class="band-name">市场</span>
-                                <div class="compare-track"><i style="--w: 88%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 42%;"></i></div>
-                            </div>
-                            <div class="compare-band">
                                 <span class="band-name">供应链</span>
                                 <div class="compare-track"><i style="--w: 90%;"></i></div>
                                 <div class="compare-track west"><i style="--w: 36%;"></i></div>
                             </div>
-                            <div class="compare-band">
-                                <span class="band-name">治理</span>
-                                <div class="compare-track"><i style="--w: 76%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 48%;"></i></div>
-                            </div>
                         </div>
                     </div><div style="margin-top: 24px;">
-                        <div class="compact-row">
+                        <div class="compact-row fragment fade-up">
                             <div class="compact-label">产业政策</div>
-                            <div class="compact-val">国家战略精准引导，资源高效集中</div>
+                            <div class="compact-val">中国"有为政府"顶层设计，资源高效集中</div>
                             <div class="compact-vs">vs</div>
-                            <div class="compact-val">企业分散探索，方向频繁摇摆</div>
+                            <div class="compact-val">西方企业分散探索，方向受资本影响摇摆</div>
                         </div>
-                        <div class="compact-row">
+                        <div class="compact-row fragment fade-up">
                             <div class="compact-label">技术路线</div>
-                            <div class="compact-val">集成创新→自主突破（专利全球2/3）</div>
+                            <div class="compact-val">中国依托"新型举国体制"从集成创新走向自主突破</div>
                             <div class="compact-vs">vs</div>
-                            <div class="compact-val">基础研发强，但转化效率低</div>
+                            <div class="compact-val">西方基础研发强，但产业空心化导致转化率低</div>
                         </div>
-                        <div class="compact-row">
-                            <div class="compact-label">市场策略</div>
-                            <div class="compact-val">供应链优势+规模化创新降本</div>
-                            <div class="compact-vs">vs</div>
-                            <div class="compact-val">高溢价但市场萎缩，波动性大</div>
-                        </div>
-                        <div class="compact-row">
+                        <div class="compact-row fragment fade-up">
                             <div class="compact-label">供应链</div>
-                            <div class="compact-val">全产业链自主可控，国产化超70%</div>
+                            <div class="compact-val">中国全产业链自主可控，核心国产化率不断提升</div>
                             <div class="compact-vs">vs</div>
-                            <div class="compact-val">依赖全球化分工，地缘风险暴露</div>
-                        </div>
-                        <div class="compact-row">
-                            <div class="compact-label">社会治理</div>
-                            <div class="compact-val">产业升级与就业保障同步推进</div>
-                            <div class="compact-vs">vs</div>
-                            <div class="compact-val">市场自发调节，"铁锈地带"困境</div>
+                            <div class="compact-val">西方依赖全球分工，地缘风险暴露</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第7页：两种路径 ==================== -->
+        <!-- ==================== 第6页：底层逻辑 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap">
-                    <div class="eyebrow">Core Logics</div>
-                    <h2 class="slide-title">两种制度逻辑</h2>
+                    <div class="eyebrow">底层逻辑</div>
+                    <h2 class="slide-title">两条路径，两种制度逻辑</h2>
 
-                    
                     <div class="topic-visual light visual-split" aria-hidden="true">
                         <div class="split-card china">
-                            <div class="visual-mini-title">China Path</div>
+                            <div class="visual-mini-title">制度驱动</div>
                             <p>集成创新<br>规模突破<br>全球领跑</p>
                         </div>
-                        <div class="split-beam">→</div>
+                        <div class="split-beam">vs</div>
                         <div class="split-card west">
-                            <div class="visual-mini-title">Western Path</div>
+                            <div class="visual-mini-title">资本驱动</div>
                             <p>基础研究强<br>转化效率低<br>产业空心化</p>
                         </div>
                     </div><div class="logic-grid">
-                        <article class="logic-panel china">
+                        <article class="logic-panel china fragment fade-up">
                             <div>
-                                <div class="logic-tag">China Path · 制度驱动</div>
+                                <div class="logic-tag">中国路径 · 制度驱动</div>
                                 <h3>集成创新 → 规模突破 → 全球领跑</h3>
                                 <div class="logic-metrics">
-                                    <span class="metric-pill">专利全球2/3</span>
-                                    <span class="metric-pill">市占率28%→57%</span>
-                                    <span class="metric-pill">人形机器人80-90%份额</span>
+                                    <span class="metric-pill">专利占全球2/3</span>
+                                    <span class="metric-pill">国产品牌市占率翻倍</span>
+                                    <span class="metric-pill">"集中力量办大事"</span>
                                 </div>
                             </div>
                         </article>
-                        <article class="logic-panel west">
+                        <article class="logic-panel west fragment fade-up">
                             <div>
-                                <div class="logic-tag">Western Path · 市场驱动</div>
-                                <h3>基础研究强，但商业转化困难</h3>
+                                <div class="logic-tag">西方路径 · 资本与市场驱动</div>
+                                <h3>技术虽强但受资本短视影响，产业根基不稳</h3>
                                 <div class="logic-metrics">
-                                    <span class="metric-pill">波士顿动力被卖三次</span>
+                                    <span class="metric-pill">波士顿动力被转卖三次</span>
                                     <span class="metric-pill">技术领先却持续亏损</span>
                                     <span class="metric-pill">产业空心化加剧</span>
                                 </div>
@@ -1960,14 +1937,14 @@
             </div>
         </section>
 
-        <!-- ==================== 第8页：时间线 ==================== -->
+        <!-- ==================== 第7页：历史纵深 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap">
-                    <div class="eyebrow">Timeline</div>
-                    <h2 class="slide-title">四十年追赶奇迹</h2>
+                    <div class="eyebrow">历史纵深</div>
+                    <h2 class="slide-title">四十年从无到有、从弱到强的伟大飞跃</h2>
+                    <p class="slide-lead">西方在20世纪50年代率先起步（1961年通用汽车引入Unimate）。中国在底子薄的背景下完成了跨越。</p>
 
-                    
                     <div class="topic-visual light visual-timeline" aria-hidden="true">
                         <div class="timeline-line"></div>
                         <div class="timeline-node" style="left: 10%;">
@@ -1975,52 +1952,37 @@
                             <div class="dot"></div>
                             <span>起步</span>
                         </div>
-                        <div class="timeline-node" style="left: 34%;">
-                            <strong>2013</strong>
+                        <div class="timeline-node" style="left: 46%;">
+                            <strong>2015</strong>
                             <div class="dot"></div>
-                            <span>超越</span>
+                            <span>顶层设计</span>
                         </div>
-                        <div class="timeline-node" style="left: 62%;">
+                        <div class="timeline-node" style="left: 82%;">
                             <strong>2024</strong>
                             <div class="dot"></div>
-                            <span>爆发</span>
-                        </div>
-                        <div class="timeline-node" style="left: 88%;">
-                            <strong>2026</strong>
-                            <div class="dot"></div>
-                            <span>量产</span>
+                            <span>全球第一</span>
                         </div>
                     </div><div class="case-layout">
-                        <article class="case-prism">
+                        <article class="case-prism fragment fade-up">
                             <div class="small">Core Data</div>
-                            <p class="core">2024年新增安装<strong>29.5万台</strong>，占全球<strong>54%</strong>，密度<strong>470台/万人</strong></p>
+                            <p class="core">2024年中国新增工业机器人安装<strong>29.5万台</strong>，占全球总量的<strong>54%</strong></p>
                         </article>
 
                         <div class="case-grid">
-                            <article class="case-card">
+                            <article class="case-card fragment fade-up">
                                 <div class="num">82</div>
                                 <h3>起步</h3>
-                                <p>中国第一台工业机器人样机</p>
+                                <p>中国第一台工业机器人样机诞生</p>
                             </article>
-                            <article class="case-card">
-                                <div class="num">13</div>
-                                <h3>超越</h3>
-                                <p>全球最大市场，但国产占28%</p>
-                            </article>
-                            <article class="case-card">
+                            <article class="case-card fragment fade-up">
                                 <div class="num">15</div>
-                                <h3>加速</h3>
-                                <p>制造2025出台，制度力量显现</p>
+                                <h3>顶层设计</h3>
+                                <p>《中国制造2025》出台，国家力量显现</p>
                             </article>
-                            <article class="case-card">
+                            <article class="case-card fragment fade-up">
                                 <div class="num">24</div>
-                                <h3>爆发</h3>
-                                <p>人形机器人元年，融资286亿</p>
-                            </article>
-                            <article class="case-card">
-                                <div class="num">26</div>
-                                <h3>量产</h3>
-                                <p>智元万台下线，宇树IPO</p>
+                                <h3>全球第一</h3>
+                                <p>稳居世界第一大市场，安装量占全球54%</p>
                             </article>
                         </div>
                     </div>
@@ -2028,38 +1990,44 @@
             </div>
         </section>
 
-        <!-- ==================== 第9页：案例一 ==================== -->
+        <!-- ==================== 第8页：案例一 ==================== -->
         <section>
             <div class="slide-shell theme-dark">
                 <div class="content-wrap">
-                    <div class="eyebrow">Case Study 1</div>
-                    <h2 class="slide-title">产业政策的力量</h2>
+                    <div class="eyebrow">案例分析一</div>
+                    <h2 class="slide-title">"新型举国体制"与核心零部件的国产替代</h2>
+                    <p class="slide-lead">破除西方垄断，实现高水平科技自立自强。</p>
 
-                    
                     <div class="topic-visual dark visual-pillars" aria-hidden="true">
-                        <div class="pillar" style="--h: 92px;">库卡<br>收购</div>
-                        <div class="pillar" style="--h: 126px;">国产<br>替代</div>
-                        <div class="pillar" style="--h: 156px;">市占<br>翻倍</div>
-                    </div><div class="value-grid">
-                        <article class="value-card">
+                        <div class="pillar" style="--h: 92px;">逆向<br>整合</div>
+                        <div class="pillar" style="--h: 126px;">攻克<br>卡脖子</div>
+                        <div class="pillar" style="--h: 156px;">产业链<br>共赢</div>
+                    </div>
+
+                    <div class="fragment fade-up" style="max-width: 500px; margin: 0 auto; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.14);">
+                        <img src="images/official_robot_sites/unitree_g1_clean.jpg" alt="宇树G1人形机器人" style="width: 100%; display: block; object-fit: cover; max-height: 200px;">
+                    </div>
+
+                    <div class="value-grid">
+                        <article class="value-card fragment fade-up">
                             <div class="value-index">01</div>
                             <div>
-                                <h3>库卡收购</h3>
-                                <p>发展中国家企业收购发达国家"国家冠军"</p>
+                                <h3>资本逆向整合</h3>
+                                <p>库卡被中国企业收购，从被动引进走向主动布局</p>
                             </div>
                         </article>
-                        <article class="value-card">
+                        <article class="value-card fragment fade-up">
                             <div class="value-index">02</div>
                             <div>
-                                <h3>达芬奇围攻</h3>
-                                <p>国产替代从不可能到正在发生</p>
+                                <h3>攻克"卡脖子"</h3>
+                                <p>绿的谐波、中大力德等打破精密减速器外资垄断</p>
                             </div>
                         </article>
-                        <article class="value-card">
+                        <article class="value-card fragment fade-up">
                             <div class="value-index">03</div>
                             <div>
-                                <h3>十年翻倍</h3>
-                                <p>28%→57%，制度效率的量化证明</p>
+                                <h3>产业链共赢</h3>
+                                <p>国产零部件降本，市占率从28%跃升至57%</p>
                             </div>
                         </article>
                     </div>
@@ -2067,206 +2035,158 @@
             </div>
         </section>
 
-        <!-- ==================== 第10页：案例二 ==================== -->
+        <!-- ==================== 第9页：案例二 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap">
-                    <div class="eyebrow">Case Study 2</div>
-                    <h2 class="slide-title">市场机制的双刃剑</h2>
-                    <p class="slide-lead">同样的赛道，不同的命运。</p>
+                    <div class="eyebrow">案例分析二</div>
+                    <h2 class="slide-title">不同机制下的企业命运</h2>
 
-                    
                     <div class="topic-visual light visual-split" aria-hidden="true">
                         <div class="split-card west">
-                            <div class="visual-mini-title">高技术</div>
+                            <div class="visual-mini-title">西方资本的"弃儿"</div>
                             <p>波士顿动力<br>Optimus</p>
                         </div>
                         <div class="split-beam">vs</div>
                         <div class="split-card china">
-                            <div class="visual-mini-title">高转化</div>
+                            <div class="visual-mini-title">"有为政府+有效市场"</div>
                             <p>宇树科技<br>智元机器人</p>
                         </div>
-                    </div><div class="case-grid" style="grid-template-columns: repeat(2, 1fr);">
-                        <article class="case-card">
+                    </div>
+
+                    <div style="display: flex; gap: 18px; margin: 18px 0;">
+                        <div class="fragment fade-up" style="flex: 1; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
+                            <video autoplay muted loop playsinline style="width: 100%; display: block; max-height: 160px; object-fit: cover;">
+                                <source src="images/official_robot_sites/figure_news_hero.mp4" type="video/mp4">
+                            </video>
+                            <div style="padding: 8px 12px; background: var(--card); font-size: 0.62em; color: var(--text-muted); text-align: center;">Figure AI · 西方资本驱动</div>
+                        </div>
+                        <div class="fragment fade-up" style="flex: 1; border-radius: 14px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.12);">
+                            <img src="images/official_robot_sites/unitree_g1_clean.jpg" alt="宇树G1" style="width: 100%; display: block; max-height: 160px; object-fit: cover;">
+                            <div style="padding: 8px 12px; background: var(--card); font-size: 0.62em; color: var(--text-muted); text-align: center;">宇树G1 · 中国制度驱动</div>
+                        </div>
+                    </div>
+
+                    <div class="case-grid" style="grid-template-columns: repeat(2, 1fr);">
+                        <article class="case-card fragment fade-up">
                             <div class="num">01</div>
                             <h3>波士顿动力</h3>
-                            <p>技术最强，但被踢了三次</p>
+                            <p>技术登峰造极，却因难以变现被三次易手</p>
                         </article>
-                        <article class="case-card">
+                        <article class="case-card fragment fade-up">
                             <div class="num">02</div>
                             <h3>特斯拉Optimus</h3>
-                            <p>个人英雄主义，能复制吗？</p>
+                            <p>依赖马斯克个人光环，能否复制存疑</p>
                         </article>
-                        <article class="case-card">
+                        <article class="case-card fragment fade-up">
                             <div class="num">03</div>
                             <h3>宇树科技</h3>
-                            <p>9.9万，连续盈利，递交IPO</p>
+                            <p>成本降至9.9万，递交IPO，持续盈利</p>
                         </article>
-                        <article class="case-card">
+                        <article class="case-card fragment fade-up">
                             <div class="num">04</div>
                             <h3>智元机器人</h3>
-                            <p>万台下线，开源百万数据集</p>
+                            <p>依托国家级创新生态，万台下线并开源数据集</p>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第11页：数据对比 ==================== -->
-        <section>
-            <div class="slide-shell theme-paper">
-                <div class="content-wrap">
-                    <div class="eyebrow">Data Comparison</div>
-                    <h2 class="slide-title">五个维度的制度差异</h2>
-
-                    
-                    <div class="topic-visual light visual-band" aria-hidden="true">
-                        <div class="band-stack">
-                            <div class="compare-band">
-                                <span class="band-name">政策</span>
-                                <div class="compare-track"><i style="--w: 84%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 38%;"></i></div>
-                            </div>
-                            <div class="compare-band">
-                                <span class="band-name">创新</span>
-                                <div class="compare-track"><i style="--w: 80%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 54%;"></i></div>
-                            </div>
-                            <div class="compare-band">
-                                <span class="band-name">市场</span>
-                                <div class="compare-track"><i style="--w: 88%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 44%;"></i></div>
-                            </div>
-                            <div class="compare-band">
-                                <span class="band-name">供应链</span>
-                                <div class="compare-track"><i style="--w: 92%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 34%;"></i></div>
-                            </div>
-                            <div class="compare-band">
-                                <span class="band-name">治理</span>
-                                <div class="compare-track"><i style="--w: 74%;"></i></div>
-                                <div class="compare-track west"><i style="--w: 50%;"></i></div>
-                            </div>
-                        </div>
-                    </div><div class="matrix-wrap">
-                        <table class="matrix-table">
-                            <thead>
-                                <tr><th>维度</th><th>中国</th><th>西方</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>产业政策</td><td>国家战略精准引导，十年追赶到领跑</td><td>企业分散决策，方向摇摆</td></tr>
-                                <tr><td>技术创新</td><td>专利全球2/3，自研执行器+AI算法</td><td>基础研究强，商业化转化慢</td></tr>
-                                <tr><td>市场策略</td><td>供应链降本+规模化创新</td><td>高溢价但市场份额收缩</td></tr>
-                                <tr><td>供应链</td><td>全链自主可控，国产化超70%</td><td>全球化依赖，地缘风险大</td></tr>
-                                <tr><td>社会治理</td><td>产业升级与就业保障同步推进</td><td>市场调节，"铁锈地带"问题突出</td></tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== 第12页：社会影响 ==================== -->
+        <!-- ==================== 第10页：社会影响 ==================== -->
         <section>
             <div class="slide-shell theme-dark">
                 <div class="content-wrap">
-                    <div class="eyebrow">Social Impact</div>
-                    <h2 class="slide-title">机器人来了，社会准备好了吗？</h2>
+                    <div class="eyebrow">社会影响</div>
+                    <h2 class="slide-title">"机器换人"时代的社会治理差异</h2>
+                    <p class="slide-lead">当机器人大规模进厂，社会准备好了吗？</p>
 
-                    
                     <div class="topic-visual dark visual-challenge" aria-hidden="true">
-                        <div class="challenge-core">社会适配</div>
-                        <div class="challenge-node top">就业</div>
-                        <div class="challenge-node left">教育</div>
-                        <div class="challenge-node right">伦理</div>
-                        <div class="challenge-node bottom">安全</div>
+                        <div class="challenge-core">社会治理</div>
+                        <div class="challenge-node top fragment fade-up">就业</div>
+                        <div class="challenge-node left fragment fade-up">保障</div>
+                        <div class="challenge-node right fragment fade-up">规范</div>
+                        <div class="challenge-node bottom fragment fade-up">伦理</div>
                     </div><div class="framework-stack">
-                        <div class="framework-row">
-                            <div class="framework-label">就业</div>
-                            <div class="framework-desc">中国：产业升级与再就业并行　｜　西方：市场调节，"铁锈地带"</div>
+                        <div class="framework-row fragment fade-up">
+                            <div class="framework-label">就业保障</div>
+                            <div class="framework-desc">中国践行以人民为中心，产业升级、职业教育与再就业帮扶并行</div>
+                            <div class="framework-clue">People-Centered</div>
                         </div>
-                        <div class="framework-row">
-                            <div class="framework-label">教育</div>
-                            <div class="framework-desc">中国：新工科+职教改革定向培养　｜　西方：高校自主调整</div>
+                        <div class="framework-row fragment fade-up">
+                            <div class="framework-label">西方困境</div>
+                            <div class="framework-desc">完全交由市场自发调节，导致社会矛盾撕裂，"铁锈地带"问题突出</div>
+                            <div class="framework-clue">Market-Only</div>
                         </div>
-                        <div class="framework-row">
-                            <div class="framework-label">伦理</div>
-                            <div class="framework-desc">中国：政府主导制定规范　｜　西方：行业自律，周期较长</div>
-                        </div>
-                        <div class="framework-row">
-                            <div class="framework-label">社保</div>
-                            <div class="framework-desc">中国：灵活就业纳入保障　｜　西方：成熟但面临老龄化压力</div>
-                        </div>
-                        <div class="framework-row">
-                            <div class="framework-label">安全</div>
-                            <div class="framework-desc">中国：核心技术自主可控　｜　西方："友岸外包"回流</div>
+                        <div class="framework-row fragment fade-up">
+                            <div class="framework-label">制度规范</div>
+                            <div class="framework-desc">中国政府主导前瞻性伦理与安全规范制定；西方长期陷于资本游说与缓慢立法周期</div>
+                            <div class="framework-clue">Governance</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第13页：制度自信 ==================== -->
+        <!-- ==================== 第11页：客观审视 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap">
-                    <div class="eyebrow">Assessment</div>
-                    <h2 class="slide-title">制度自信与持续突破</h2>
+                    <div class="eyebrow">客观审视</div>
+                    <h2 class="slide-title">正视短板，彰显制度的自我完善能力</h2>
+                    <p class="slide-lead">真正的自信不是盲目自大，而是敢于直面差距并有能力解决问题。</p>
 
-                    
                     <div class="topic-visual light visual-split" aria-hidden="true">
                         <div class="split-card china">
-                            <div class="visual-mini-title">制度自信</div>
-                            <p>40年追赶<br>市占翻倍<br>首秀全球</p>
+                            <div class="visual-mini-title">成就</div>
+                            <p>40年跃居第一<br>全链条降本<br>举国体制护航</p>
                         </div>
                         <div class="split-beam">+</div>
                         <div class="split-card west">
-                            <div class="visual-mini-title">持续突破</div>
-                            <p>补齐短板<br>强化基础研究<br>继续向上</p>
+                            <div class="visual-mini-title">改进空间</div>
+                            <p>高端芯片<br>伺服编码器<br>基础研究</p>
                         </div>
                     </div><div class="logic-grid">
-                        <article class="logic-panel china">
+                        <article class="logic-panel china fragment fade-up">
                             <div>
-                                <div class="logic-tag">制度自信</div>
-                                <h3>中国模式的五大成就</h3>
+                                <div class="logic-tag">成就总结</div>
+                                <h3>40年跃居全球第一份额</h3>
                                 <div class="logic-metrics">
-                                    <span class="metric-pill">40年从零到全球第一</span>
+                                    <span class="metric-pill">全链条协同降本</span>
+                                    <span class="metric-pill">新型举国体制护航</span>
                                     <span class="metric-pill">国产品牌市占率翻倍</span>
-                                    <span class="metric-pill">自研核心执行器</span>
-                                    <span class="metric-pill">春晚集群协同全球首秀</span>
-                                    <span class="metric-pill">产业与社会治理并重</span>
                                 </div>
                             </div>
                         </article>
-                        <article class="logic-panel west">
+                        <article class="logic-panel west fragment fade-up">
                             <div>
-                                <div class="logic-tag">持续突破方向</div>
-                                <h3>制度自我完善的空间</h3>
+                                <div class="logic-tag">改进空间</div>
+                                <h3>局部技术仍有差距，需持续强化基础研究</h3>
                                 <div class="logic-metrics">
-                                    <span class="metric-pill">高端减速器的国产替代</span>
-                                    <span class="metric-pill">基础研究长期投入</span>
+                                    <span class="metric-pill">高端底层芯片</span>
+                                    <span class="metric-pill">高精度伺服电机编码器</span>
                                 </div>
                             </div>
                         </article>
                     </div>
+                    <p class="fragment fade-in" style="margin-top: 18px; font-size: 0.76em; color: var(--accent); font-weight: 600;">制度优势：依托央企技术担当与民企创新活力，我们有强大的纠错与攻坚能力。</p>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第14页：未来展望 ==================== -->
+        <!-- ==================== 第12页：未来展望 ==================== -->
         <section>
             <div class="slide-shell theme-dark">
                 <div class="content-wrap">
-                    <div class="eyebrow">Future Outlook</div>
-                    <h2 class="slide-title">机器人的下一个十年</h2>
+                    <div class="eyebrow">未来展望</div>
+                    <h2 class="slide-title">下一个十年：中国式现代化的产业注脚</h2>
 
-                    
                     <div class="topic-visual dark visual-timeline" aria-hidden="true">
                         <div class="timeline-line" style="background: linear-gradient(90deg, rgba(242, 171, 112, 0.22), rgba(242, 171, 112, 0.92));"></div>
                         <div class="timeline-node" style="left: 16%;">
                             <strong style="color: rgba(255,255,255,0.94);">2026-27</strong>
                             <div class="dot"></div>
-                            <span style="color: rgba(255,255,255,0.62);">工厂部署</span>
+                            <span style="color: rgba(255,255,255,0.62);">智能工厂</span>
                         </div>
                         <div class="timeline-node" style="left: 50%;">
                             <strong style="color: rgba(255,255,255,0.94);">2027-30</strong>
@@ -2276,79 +2196,76 @@
                         <div class="timeline-node" style="left: 84%;">
                             <strong style="color: rgba(255,255,255,0.94);">2030+</strong>
                             <div class="dot"></div>
-                            <span style="color: rgba(255,255,255,0.62);">进入家庭</span>
+                            <span style="color: rgba(255,255,255,0.62);">千家万户</span>
                         </div>
                     </div><div class="case-strip">
-                        <article class="strip-card">
+                        <article class="strip-card fragment fade-up">
                             <div class="strip-kicker">2026-2027</div>
-                            <p class="strip-title">工厂规模化部署</p>
+                            <p class="strip-title">智能工厂规模化部署</p>
                         </article>
-                        <article class="strip-card">
+                        <article class="strip-card fragment fade-up">
                             <div class="strip-kicker">2027-2030</div>
-                            <p class="strip-title">场景大幅拓展</p>
+                            <p class="strip-title">商业、物流、特种环境大幅拓展</p>
                         </article>
-                        <article class="strip-card">
+                        <article class="strip-card fragment fade-up">
                             <div class="strip-kicker">2030+</div>
-                            <p class="strip-title">走进千家万户？</p>
+                            <p class="strip-title">深度融入千家万户</p>
                         </article>
                     </div>
 
-                    <div class="summary-statement" style="margin-top: 24px;">
+                    <div class="summary-statement fragment fade-in" style="margin-top: 24px;">
                         <div class="kicker">中国优势</div>
-                        <div class="text">制造规模 + 供应链深度 + 政策协同 → 中国有望在机器人时代<strong>从跟跑到领跑</strong></div>
+                        <div class="text">超大规模市场 + 完备产业链 + 强有力的宏观政策协同 → 中国必将在实体AI（Physical AI）时代实现<strong>全面领跑</strong></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第15页：结论 ==================== -->
+        <!-- ==================== 第13页：总结升华 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap">
-                    <div class="eyebrow">Conclusion</div>
-                    <h2 class="slide-title">两种制度，两条路径</h2>
+                    <div class="eyebrow">总结升华</div>
+                    <h2 class="slide-title">坚定"四个自信"，走好中国式现代化道路</h2>
 
-                    
                     <div class="topic-visual light visual-pillars" aria-hidden="true">
-                        <div class="pillar" style="--h: 104px;">竞争力</div>
-                        <div class="pillar" style="--h: 132px;">制度效率</div>
-                        <div class="pillar" style="--h: 156px;">自我完善</div>
+                        <div class="pillar" style="--h: 104px;">道路<br>自信</div>
+                        <div class="pillar" style="--h: 132px;">制度<br>自信</div>
+                        <div class="pillar" style="--h: 156px;">理论<br>自信</div>
                     </div><div class="closing-stack">
-                        <article class="closing-card">
+                        <article class="closing-card fragment fade-up">
                             <div class="closing-mark">1</div>
-                            <h3>中国制度优势已转化为产业竞争力</h3>
+                            <h3>道路与制度自信：新型举国体制能有效转化为强大的产业国际竞争力</h3>
                         </article>
-                        <article class="closing-card">
+                        <article class="closing-card fragment fade-up">
                             <div class="closing-mark">2</div>
-                            <h3>从追赶到并跑再到领跑，是制度效率的必然</h3>
+                            <h3>理论与文化自信：坚持科技向善、造福人民，是中国特色社会主义理论的生动实践</h3>
                         </article>
-                        <article class="closing-card">
+                        <article class="closing-card fragment fade-up">
                             <div class="closing-mark">3</div>
-                            <h3>真正的自信：承认短板，但相信制度有自我完善能力</h3>
+                            <h3>从追赶、并跑到领跑，中国机器人产业的崛起雄辩地证明——中国式现代化是强国建设、民族复兴的唯一正确道路</h3>
                         </article>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ==================== 第16页：结尾 ==================== -->
+        <!-- ==================== 第14页：参考文献 ==================== -->
         <section>
             <div class="slide-shell theme-paper">
                 <div class="content-wrap" style="text-align: center;">
-                    <div class="eyebrow" style="justify-content: center;">References</div>
-                    <h2 style="margin: 0; font-size: 2.4em; font-weight: 900; color: var(--text);">谢谢</h2>
+                    <div class="eyebrow" style="justify-content: center;">参考文献</div>
+                    <h2 style="margin: 0; font-size: 2.4em; font-weight: 900; color: var(--text);">谢谢聆听！</h2>
                     <p style="margin: 8px 0 24px; font-size: 0.66em; letter-spacing: 7px; text-transform: uppercase; color: var(--text-muted);">Thank You</p>
 
-                    <div style="display: flex; justify-content: center; text-align: left; max-width: 600px; margin: 0 auto;">
+                    <div class="fragment fade-in" style="display: flex; justify-content: center; text-align: left; max-width: 600px; margin: 0 auto;">
                         <div class="ending-card" style="width: 100%;">
                             <p class="label">参考文献</p>
                             <ul style="margin: 0; padding: 0 0 0 18px; font-size: 0.58em; line-height: 1.9; color: var(--text-body);">
                                 <li>IFR, <em>World Robotics 2025 Report</em></li>
-                                <li>中国机器人产业联盟, 2024年产业发展报告</li>
-                                <li>国务院,《中国制造2025》/ 十四五机器人规划</li>
-                                <li>WIPO, 全球机器人领域专利数据</li>
-                                <li>Boston Dynamics / Tesla / Unitree / AgiBot</li>
-                                <li>Forbes & Teslarati, 2026 Reports</li>
+                                <li>国务院,《"十四五"机器人产业发展规划》</li>
+                                <li>《习近平新时代中国特色社会主义思想概论》</li>
+                                <li>银河证券：工业机器人行业复盘报告</li>
                             </ul>
                         </div>
                     </div>
@@ -2414,6 +2331,7 @@
 
         var coverCopy = coverLayout.querySelector(".cover-copy");
         var coverVisual = coverLayout.querySelector(".cover-visual");
+        var coverMedia = coverLayout.querySelector(".cover-visual-media");
         var coverHint = coverLayout.querySelector(".cover-click-hint");
 
         var revealed = false;
@@ -2459,6 +2377,9 @@
                 "position:absolute;top:0;bottom:0;z-index:1;" +
                 "left:" + vizLeft + "%;width:" + (100 - vizLeft) + "%;" +
                 "pointer-events:" + (t > 0.8 ? "auto" : "none") + ";";
+
+            // 动画完成后开放 iframe 鼠标交互，让 Spline 3D 响应移动
+            if (coverMedia) coverMedia.style.pointerEvents = t > 0.8 ? "auto" : "none";
 
             // cover-hint 已移除
         }
