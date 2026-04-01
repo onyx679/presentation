@@ -873,6 +873,7 @@
             grid-template-columns: 1.3fr 1fr;
             gap: 18px;
             align-items: stretch;
+            min-height: 228px;
         }
 
         .stage-copy {
@@ -898,6 +899,11 @@
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
+            align-content: start;
+        }
+
+        .stage-grid .stage-card:last-child {
+            grid-column: 1 / -1;
         }
 
         .stage-card {
@@ -956,6 +962,11 @@
 
         .topic-visual.dark .compare-band .band-name {
             color: rgba(255, 255, 255, 0.56);
+        }
+
+        .topic-visual.visual-stage {
+            height: auto;
+            min-height: 228px;
         }
 
         .compare-track {
@@ -1026,7 +1037,7 @@
 
         .compare-media-grid {
             display: grid;
-            grid-template-columns: 1.08fr 0.92fr;
+            grid-template-columns: 0.84fr 1.16fr;
             gap: 20px;
             margin-top: 22px;
             align-items: stretch;
@@ -1048,6 +1059,10 @@
             display: block;
             object-fit: contain;
             background: #0f1620;
+        }
+
+        .compare-media-card.fill-card video {
+            object-fit: cover;
         }
 
         .compare-media-tag {
@@ -1751,10 +1766,6 @@
                         <div class="cover-badge" style="color: var(--accent);">《习近平新时代中国特色社会主义思想概论》半期实践汇报</div>
                         <h1 class="cover-title" style="color: var(--text);">从跟随到领跑<br>中西机器人产业演进<br>与制度动因分析</h1>
                         <p class="cover-sub" style="color: var(--text-body);">从1982年中国起步，到2024年稳居全球第一大市场。四十年追赶背后，是两种截然不同的制度逻辑。</p>
-                        <div class="cover-info" style="color: var(--text-muted); border-top-color: var(--line);">
-                            <div>演讲人：张文豪</div>
-                            <div>小组成员：XXX（占位符）</div>
-                        </div>
                     </div>
                     <div class="cover-visual">
                         <div class="cover-visual-card">
@@ -1800,17 +1811,21 @@
                             <div class="pulse-ring"></div>
                         </div>
                     </div><div class="big-num-grid">
-                        <div class="big-num-card fragment fade-up">
+                        <div class="big-num-card fragment fade-up" data-fragment-index="0">
                             <p class="big-num">286亿</p>
                             <p class="big-num-label">2024年国内融资额，同比翻倍</p>
                         </div>
-                        <div class="big-num-card fragment fade-up">
+                        <div class="big-num-card fragment fade-up" data-fragment-index="1">
                             <p class="big-num">$100亿+</p>
                             <p class="big-num-label">Figure AI等海外企业估值破百亿美元</p>
                         </div>
-                        <div class="big-num-card fragment fade-up">
+                        <div class="big-num-card fragment fade-up" data-fragment-index="2">
                             <p class="big-num">80-90%</p>
                             <p class="big-num-label">中国人形机器人出货占全球份额</p>
+                        </div>
+                        <div class="big-num-card fragment fade-up" data-fragment-index="2">
+                            <p class="big-num">40年</p>
+                            <p class="big-num-label">从1982年起步到稳居全球第一大市场</p>
                         </div>
                     </div>
                 </div>
@@ -1824,7 +1839,7 @@
                     <div class="eyebrow" style="justify-content: center;">破圈事件</div>
                     <h2 class="slide-title" style="text-align: center;">中国制造：从实验室走向世界舞台</h2>
 
-                    <div style="max-width: 640px; margin: 18px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.18);">
+                    <div style="max-width: 640px; margin: 18px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.18); cursor: pointer;" title="双击打开原视频" ondblclick="window.open('https://oss-global-cdn.unitree.com/static/c2ecf2a5bfbd4835ab6ed442e88c6034.mp4', '_blank', 'noopener,noreferrer')">
                         <video autoplay muted loop playsinline preload="auto" style="width: 100%; display: block;">
                             <source src="https://raw.githubusercontent.com/onyx679/presentation/8180e891520afa24aeb0242a6a68c1be21c026a8/images/official_robot_sites/unitree_spring_gala_embed.mp4" type="video/mp4">
                         </video>
@@ -2098,15 +2113,15 @@
                     <div class="compare-media-grid">
                         <div class="compare-media-card" style="cursor: pointer;" title="点击打开 Figure 官网文章" onclick="window.open('https://www.figure.ai/news/helix-02', '_blank', 'noopener,noreferrer')">
                             <video autoplay muted loop playsinline preload="auto">
-                                <source src="https://raw.githubusercontent.com/onyx679/presentation/8180e891520afa24aeb0242a6a68c1be21c026a8/images/official_robot_sites/figure_news_hero.mp4" type="video/mp4">
-                            </video>
-                            <div class="compare-media-tag">Figure AI</div>
-                        </div>
-                        <div class="compare-media-card" style="cursor: pointer;" title="点击打开 Figure 官网文章" onclick="window.open('https://www.figure.ai/news/helix-02', '_blank', 'noopener,noreferrer')">
-                            <video autoplay muted loop playsinline preload="auto">
                                 <source src="https://raw.githubusercontent.com/onyx679/presentation/8180e891520afa24aeb0242a6a68c1be21c026a8/images/official_robot_sites/figure_news_helix_02.mp4" type="video/mp4">
                             </video>
                             <div class="compare-media-tag">Helix 02</div>
+                        </div>
+                        <div class="compare-media-card fill-card" style="cursor: pointer;" title="点击打开 Figure 官网文章" onclick="window.open('https://www.figure.ai/news/helix-02', '_blank', 'noopener,noreferrer')">
+                            <video autoplay muted loop playsinline preload="auto">
+                                <source src="https://raw.githubusercontent.com/onyx679/presentation/8180e891520afa24aeb0242a6a68c1be21c026a8/images/official_robot_sites/figure_news_hero.mp4" type="video/mp4">
+                            </video>
+                            <div class="compare-media-tag">Figure AI</div>
                         </div>
                     </div>
 
